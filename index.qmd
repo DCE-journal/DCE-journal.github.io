@@ -1,6 +1,6 @@
 ---
 title: "Data-Centric Engineering Blog"
-subtitle: "This is the blog for Data-Centric Engineering (cambridge.org/dce), an open-access journal at the interface of engineering and data science. Editors in chief: Prof. Mark Girolami (University of Cambridge & The Alan Turing Institute); Eleni Chatzi (ETH Zürich); Kenichi Soga (University of California Berkeley). Published by CUP."
+subtitle: "This is the blog for Data-Centric Engineering (cambridge.org/dce), an open-access journal at the interface of engineering and data science. Editors in chief: Alice Cicirello (University of Cambridge) and Luca Magri (Imperial College London). Published by CUP."
 listing:
   contents: posts
   sort: "date desc"
