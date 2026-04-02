@@ -1,7 +1,7 @@
 ---
 title: "Bringing 3D Vision to Infrastructure: Target-free Monitoring with Remotely Paired Drones"
 author: "Alessandro Sabato"
-date: "2026-03-19"
+date: "2026-04-02"
 categories: [Academic, Translational]
 image: "Advancing_UAV.png"
 description: "Dr. Alessandro Sabato from the University of Massachusetts Lowell discusses target-free structural health monitoring using remotely paired drones and 3D vision."
