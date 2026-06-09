@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Dickinson">
+<meta name="dcterms.date" content="2026-06-09">
+<meta name="description" content="Prof.&nbsp;Alex Dickinson from the University of Southampton discusses the OpenLimb initiative, which generates open-access synthetic datasets for prosthetics research.">
+
+<title>Open-Source Datasets to Support the Community of Digital Prosthetic Limb Researchers and Designers – DCE-blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-48e5140a7aed9f2ea8f32f5f899b1cae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/DCE-mod.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/DCE-mod.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">DCE-blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://uk.linkedin.com/company/data-centric-engineering/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Open-Source Datasets to Support the Community of Digital Prosthetic Limb Researchers and Designers</h1>
+                  <div>
+        <div class="description">
+          Prof.&nbsp;Alex Dickinson from the University of Southampton discusses the OpenLimb initiative, which generates open-access synthetic datasets for prosthetics research.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Translational</div>
+                <div class="quarto-category">Paper Summary</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Alex Dickinson </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 9, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><em>This blog offers informed opinions and perspectives relating to nascent technologies in data-centric engineering. <a href="https://www.southampton.ac.uk/people/5x57lt/professor-alex-dickinson">Prof.&nbsp;Alex Dickinson</a> from the University of Southampton discusses the OpenLimb initiative, which generates open-access synthetic residual limb anatomy datasets for prosthetics research.</em></p>
+<hr>
+<p>For ~60,000 people with lower limb amputations in the UK <span class="citation" data-cites="nhs2025"><a href="#ref-nhs2025" role="doc-biblioref">[1]</a></span>, and millions more around the world, discomfort from a poorly fitting prosthetic limb is one of the biggest barriers to comfort, mobility, and both long term physical and mental health. Commonly a ‘socket’ connects the prosthetic limb to the user. The design of this bespoke device is a skilled craft performed by expert healthcare professionals called prosthetists, who aim to balance comfort with a firm coupling that allows physical activity with confidence, relying on experience and iterative trial and improvement.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="prosthetic.jpg" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Irrespective of how advanced the rest of the prosthetic limb is, the person’s comfort and function depend primarily on the design of their bespoke prosthetic ‘socket’, which requires a detailed understanding of their residual limb anatomy. Credit: J Appleton</figcaption>
+</figure>
+</div>
+<p>Advances in computer-aided design and fabrication have not yet delivered their full potential. There has been quite limited application of data to drive prosthetic socket design, and many prosthetists use CAD tools in a way that mirrors the traditional hands-on plaster casting process. Many other good ideas, such as using simulation to predict socket fit, are published by researchers but have not yet translated into clinical use.</p>
+<p>The <a href="https://peoplepoweredprosthetics.com/">People Powered Prosthetics</a> group, principally based at University of Southampton, aims to change that. Our team’s earlier publication <span class="citation" data-cites="bramley2021"><a href="#ref-bramley2021" role="doc-biblioref">[2]</a></span> reported on measuring the residual limb’s tissue composition and response to mechanical loads using MRI scans, which led to several requests for us to share our MRI data. MRI and CT scans can provide anatomic shape information which is useful in computer aided design and biomechanical simulations, but they are difficult to access. Due to cost, risk (and in the case of CT, a radiation dose) these scans are not routinely collected in clinics, only if something is wrong, and as personal healthcare data they should be treated with utmost privacy.</p>
+<p>We were keen to make our research available to as many people as possible. Funded by UK taxpayers, we felt obliged to share, and there is scope to help improve the generalisability of future biomechanical engineering studies where a lot of prior research has been limited by the researchers’ access to only very small datasets, or single patients. Worse, with relatively few people with amputations around each research institution, failing to share data means repeatedly burdening the same small group of willing participants, inconveniencing them and, in some cases, placing them at unnecessary risk.</p>
+<p>However, sharing the raw data meant navigating significant ethical and administrative barriers. Even though we obtained ethical approval and the participants’ consent, we needed to preserve their privacy. We could go through additional ethical approvals and data sharing agreements (DSAs) with all the people requesting our data, but the time and effort would be prohibitive.</p>
+<p>Our solution was to develop the OpenLimb initiative, as a way to pool MRI and CT scan images collected for previous research, and generate synthetic residual limb anatomy data which we <em>could</em> share whilst preserving the original research participants’ privacy. We identified an international group of researchers and other custodians who had collected ethically-approved datasets with participants’ consent, proposed the idea, obtained Secondary Data Analysis ethical approval and went through the data sharing agreement process with them. We introduced our first output from the initiative, the <a href="https://github.com/abel-research/OpenLimbTT">OpenLimbTT</a> dataset, in our recent <a href="https://www.cambridge.org/core/journals/data-centric-engineering/article/openlimbtt-a-transtibial-residual-limb-shape-model-for-prosthetics-simulation-and-design-creating-a-statistical-anatomic-model-using-sparse-data/3F3A243D8DBAB01D21281BFCEDF9608F">Data-Centric Engineering paper</a> <span class="citation" data-cites="sunderland2025"><a href="#ref-sunderland2025" role="doc-biblioref">[3]</a></span>. The dataset starts with an average residual limb which can be stretched and scaled in an anatomical way to let researchers conduct more statistically representative biomechanical engineering work. This tool could also let engineers test their prosthetic limb concepts in virtual ‘worst case’ patients, and we have been excited to see several groups already citing the paper having used the model in their research.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Modes1&amp;2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>The OpenLimbTT synthetic dataset includes an average residual limb (centre) which can be stretched and scaled in an anatomical way, to help designers test their new prosthetics concepts, and researchers conduct more statistically representative biomechanical engineering work. Source: <a href="https://github.com/abel-research/OpenLimbTT">OpenLimbTT GitHub</a></figcaption>
+</figure>
+</div>
+<p>OpenLimb has a lot more development work underway. The OpenLimbTT model only includes scans from four countries and has limited racial diversity, and it also has a considerable gender bias. Fewer women participate in prosthetics research than men <span class="citation" data-cites="ljung2024"><a href="#ref-ljung2024" role="doc-biblioref">[4]</a></span>, and this was reflected in the scans we were able to access. This gap needs to be addressed to avoid perpetuating a gender data bias that might contribute to worse clinical experiences or outcomes for women. We are also working on an <a href="https://github.com/abel-research/OpenLimbTF">OpenLimbTF</a> model for transfemoral (above-knee-amputated) residual limbs, which represent the next-largest patient group after transtibial. This dataset is also available open-access.</p>
+<p>We also carefully chose not to share any data associated with the prosthetic socket designs used by the people represented within the OpenLimb datasets. The prosthetic limb users consented for their scans to be used in research, but we consider socket designs to contain intellectual input from the prosthetists, so we do not consider it appropriate to share them. We also do not see it as the engineer’s role to design prosthetic sockets. However, via collaborative research with prosthetists and prosthetic design software company Radii Devices Ltd., using related methods we have developed bespoke evidence-generated prosthetic socket algorithms intended to be used as a starting point for clinical fitting, and these are performing well in an Innovate UK-funded NHS multicentre trial, and in several clinics across the UK and USA <span class="citation" data-cites="mbithi2025"><a href="#ref-mbithi2025" role="doc-biblioref">[5]</a></span>.</p>
+<p>We hope that the broader impact of the OpenLimb initiative will be significant. By providing researchers, clinicians, and designers with an ethical and openly-available anatomical reference and lowering the barrier to data-informed socket design, it opens the door to more objective, personalised, and testable prosthetic innovations, helping to move prosthetic care from craft toward evidence led engineering.</p>
+<hr>
+<p><strong>Competing Interest:</strong> <a href="https://www.southampton.ac.uk/people/5x57lt/professor-alex-dickinson">Prof.&nbsp;Alex Dickinson</a> is a Professor of Biomechanical Engineering at the University of Southampton. His research focusses on the biomechanics and design of prosthetic limbs. He co-founded the People Powered Prosthetics group, works in the Bioengineering Science Research Group, and he is a Fellow of the Institution of Mechanical Engineers and the Higher Education Academy. In addition, he is a cofounder of <a href="https://radiidevices.com/">Radii Devices Ltd.</a>, a University of Southampton spinout that develops data-driven software for prosthetic socket design, and has a financial interest in the company.</p>
+<p><strong>Keywords:</strong> Prosthetic Limb; Sparse Data; Statistical Shape Model; Transtibial Amputation</p>
+<hr>
+<p><em>This is the blog for <a href="https://www.cambridge.org/core/journals/data-centric-engineering">Data-Centric Engineering</a>, an open-access journal published by Cambridge University Press and supported by the Lloyd’s Register Foundation. You can also find us on <a href="https://www.linkedin.com/company/data-centric-engineering/">LinkedIn</a>. <a href="https://www.cambridge.org/core/journals/data-centric-engineering/information/instructions-for-authors">Here are instructions</a> for submitting an article to the journal.</em></p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-nhs2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">NHS England, <span>“Service specification: Amputee rehabilitation and prosthetics services for people of all ages with limb loss and limb difference.”</span> 2025. Available: <a href="https://www.england.nhs.uk/publication/amputee-rehabilitation-and-prosthetics-services-for-people-of-all-ages-with-limb-loss-and-limb-difference/">https://www.england.nhs.uk/publication/amputee-rehabilitation-and-prosthetics-services-for-people-of-all-ages-with-limb-loss-and-limb-difference/</a></div>
+</div>
+<div id="ref-bramley2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. L. Bramley <em>et al.</em>, <span>“Changes in tissue composition and load response after transtibial amputation indicate biomechanical adaptation,”</span> <em>Annals of Biomedical Engineering</em>, vol. 49, no. 12, pp. 3176–3188, Dec. 2021, doi: <a href="https://doi.org/10.1007/s10439-021-02858-0">10.1007/s10439-021-02858-0</a>.</div>
+</div>
+<div id="ref-sunderland2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">F. E. Sunderland <em>et al.</em>, <span>“OpenLimbTT, a transtibial residual limb shape model for prosthetics simulation and design: Creating a statistical anatomic model using sparse data,”</span> <em>Data Centric Engineering</em>, vol. 6, p. e39, 2025, doi: <a href="https://doi.org/10.1017/dce.2025.10019">10.1017/dce.2025.10019</a>.</div>
+</div>
+<div id="ref-ljung2024" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">J. Ljung and A. Iacangelo, <span>“Identifying and acknowledging a sex gap in lower-limb prosthetics research: A review,”</span> <em>Journal of Prosthetics and Orthotics</em>, vol. 36, no. 1, pp. 18–24, 2024, doi: <a href="https://doi.org/10.1097/JPO.0000000000000470">10.1097/JPO.0000000000000470</a>.</div>
+</div>
+<div id="ref-mbithi2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">F. Mbithi <em>et al.</em>, <span>“Evidence-generated sockets for transtibial prosthetic limbs compared with conventional computer-aided designs: A multiple-methods study from the patient’s perspective,”</span> <em>JMIR Rehabilitation and Assistive Technologies</em>, vol. 12, 2025, doi: <a href="https://doi.org/10.2196/69962">10.2196/69962</a>.</div>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/DCE-journal\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
