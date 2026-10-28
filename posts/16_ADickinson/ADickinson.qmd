@@ -2,7 +2,7 @@
 title: "Open-Source Datasets to Support the Community of Digital Prosthetic Limb Researchers and Designers"
 author: "Alex Dickinson"
 date: "2026-06-09"
-categories: [Translational, Paper Summary]
+categories: [Translational, Paper summary]
 image: "thumbnail_cropped_blurred.jpg"
 description: "Prof. Alex Dickinson from the University of Southampton discusses the OpenLimb initiative, which generates open-access synthetic datasets for prosthetics research."
 bibliography: references.bib
