@@ -190,6 +190,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<script data-goatcounter="https://dceblog.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+
+
+<script>
+
+window.addEventListener('load', function () {
+
+  if (!window.goatcounter || !window.goatcounter.count) return;
+
+  document.querySelectorAll('.quarto-category').forEach(function (el) {
+
+    window.goatcounter.count({
+
+      path: 'type: ' + el.textContent.trim(),
+
+      event: true,
+
+    });
+
+  });
+
+});
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
